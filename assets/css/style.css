@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --textColor: #152036;
+    --primaryColor: #28303C;
+    --secundaryColor: #738D9D;
+}
+
+body {
+    font-family: "Roboto", sans-serif
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Header Area */
+
+#header {
+    height: 100vh;
+    width: 336px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--primaryColor);
+    padding-top: 100px;
+    text-align: center;
+}
+
+.headerTitle {
+    font-family: 'Dancing Script', cursive;
+    font-size:54px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--secundaryColor);
+    margin-bottom: 17px;
+}
+
+/* Recipe area */
+
+#recipe {
+    height: 320px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+#recipe::-webkit-scrollbar {
+    display: none;
+}
+
+#recipeTitle {
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.recipeItem {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, .15);
+    width: 90%;
+    margin: 5px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background .5s;
+}
+
+.recipeItem:hover {
+    background-color: rgba(255, 255, 255, .12);
+}
+
+.recipeItem ion-icon {
+    margin-right: 5px;
+    color: white;
+}
+
+.recipeItem p {
+    color: var(--secundaryColor);
+}
+
+
+
+
+/* Main Area */
+
+#main {
+    width: calc(100vw - 360px);
+    margin-left: auto;
+    padding: 128px 10px 10px;
+}
+
+.mainSection-title {
+    color: var(--textColor);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+/* Input area */
+
+.inputBlock>p, .inputIngredient {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.inputBlock input, .inputBlockTextArea {
+    width: 99%;
+    padding: 10px 8px;
+    border: 1px solid #bbb;
+    margin-top: 10px;
+}
+
+.destaque {
+    padding: 20px;
+    background-color: #ddd;
+    margin-top: 10px;
+    line-height: 22px;
+    border-radius: 5px;
+    height:100%;
+}
+
+#addRecipe {
+    background-color: #4E9E83;
+    color: white;
+    width: 99%;
+    padding: 15px 0;
+    margin: 20px 0;
+    border: 0;
+    border-radius: 5px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#addRecipe:hover{
+    background-color:#4e9e83f3;
+}
+
+#addRecipe ion-icon {
+    margin-right: .2rem;
+}
+
+.inputArea {
+    transition: 0.5s;
+    opacity: 1;
+    top: 10%;
+    pointer-events: all;
+}
+
+.escondido {
+    opacity: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.recipeArea{
+    opacity:1;
+    position:absolute;
+    width:70%;
+    top:20%;
+    transition:all .5s;
+    z-index:-1;
+}
+
+.hidden {
+    opacity:0;
+    top:-10%;
+}
+
+.buttonsArea {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.botao {
+    padding: 16px;
+    border-radius: 50%;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.trash {
+    background-color: rgba(255, 0, 0, .8);
+    color: #FFF;
+}
+
+.trash:hover{
+    background-color: rgba(255, 0, 0, .7);
+}
+
+.adicionar {
+    background-color: rgba(64, 161, 119, .9);
+    color: #FFF;
+}
+
+.adicionar:hover {
+    background-color: rgba(64, 161, 119, .9);
+    color: #FFF;
+}
+
+#ingredientInsert, #recipePrepare{
+    width:100%;
+    resize: none;
+    height:150px;
+    background:transparent;
+    border:0;
+}
+
+@media screen and (max-width:770px){
+    #header{
+        padding-top:0;
+        height:100px;
+        width:100vw;
+        line-height: 95px;
+    }
+
+    #main{
+        margin-left:0;
+        width:100vw;
+    }
+}

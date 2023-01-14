@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Recipe Book</title>
+</head>
+<body>
+    <header id="header">
+        <h1 class="headerTitle">Tastecamp</h1>
+        <ul id="recipe"></ul>
+    </header>
+    <main id="main">
+        <section class="recipeArea hidden">
+            <div class="buttonsArea">
+                <div class="botao trash"> <ion-icon name="trash-outline"></ion-icon> </div>
+                <div class="botao adicionar"> <ion-icon name="add-outline"></ion-icon> </div>
+            </div>
+            <h2 id="recipeTitle">Bolo de chocolate</h2>
+            <p class="inputIngredient">ingredientes</p>
+            <div class="destaque">
+                <textarea id="ingredientInsert" disabled>ingredientes bolo de chocolate</textarea>
+            </div>
+            <p class="inputIngredient"> Modo de preparos</p>
+            <div class="destaque">
+                <textarea id="recipePrepare" disabled>preparo do Bolo de Chocolate</textarea>
+            </div>
+        </section>
+
+        <section class="inputArea">
+            <h2 class="mainSection-title">Adicionar receita</h2>
+            <div class="inputBlock">
+                <p>nome da receita</p>
+                <input type="text" id="recipeName">
+            </div>
+            
+            <div class="inputBlock">
+                <p class="inputIngredient">ingredientes</p>
+                <textarea name="" id="ingredientDesc" cols="90" rows="10" style="resize:none;" class="inputBlockTextArea"></textarea>
+            </div>
+            
+            <div class="inputBlock">
+                <p>modo de preparo</p>
+                <textarea name="" id="howTo" cols="90" rows="10" style="resize:none;" class="inputBlockTextArea"></textarea>
+            </div>
+            
+            <button id="addRecipe">
+                <ion-icon name="save"></ion-icon>
+                Adicionar receita
+            </button>
+        </section>
+
+        
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="module" src="./assets/js/script.js"></script>
+</body>
+</html>

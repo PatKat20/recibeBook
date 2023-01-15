@@ -54,7 +54,7 @@ img {
 /* Recipe area */
 
 #recipe {
-    height: 320px;
+    height: 340px;
     overflow-y: scroll;
     -ms-overflow-style: none;
     /* IE and Edge */

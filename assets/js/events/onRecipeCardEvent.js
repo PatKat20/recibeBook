@@ -8,10 +8,19 @@ function recipeEvent(event){
     const id = recipe.id.split("-")[1];
     const recipeInfo = recipesMethod.getRecipeById(id)
     convertRecipesIntoSection(recipeInfo)
+    verifyAndInsertClass(recipe)
     sectionInput.classList.add("escondido")
     sectionInput.id = id
     recipeArea.classList.remove("hidden");
     recipeArea.style.zIndex="99"
+}
+
+function verifyAndInsertClass(recipeClicked){
+    const selected = document.querySelector(".selecionado");
+    if(selected !== null){
+        selected.classList.remove("selecionado")
+    }
+    recipeClicked.classList.add("selecionado")
 }
 
 

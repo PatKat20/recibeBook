@@ -1,6 +1,6 @@
-import { sequenciaId } from "../../utils/utils.js"
-import { insertIntoRecipes } from "../content/render.js"
-import { callToast } from "../../utils/utils.js"
+import { sequenciaId } from "../../utils/utils.js";
+import { insertIntoRecipes } from "../content/render.js";
+import { callToast } from "../../utils/utils.js";
 
 const recipesMethod = {}
 let recipesDB = {}

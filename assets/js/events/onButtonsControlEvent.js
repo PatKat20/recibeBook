@@ -7,6 +7,7 @@ function onAddButtonEvent(){
     sectionInput.classList.remove("escondido");
     recipeArea.classList.add("hidden");
     recipeArea.style.zIndex="-1"
+    removeClassSelected()
 }
 
 function onDeleteButtonEvent(){
@@ -20,7 +21,11 @@ function onDeleteButtonEvent(){
     recipeArea.style.zIndex="-1"
     recipesMethod.deleteTask(id)
     recipesMethod.saveRecipe()
+    removeClassSelected()
     callToast(`${productInfo.name} deletado com sucesso`,"#DE3163", "#E0115F")
 }
 
+function removeClassSelected(){
+    document.querySelector(".recipeItem.selecionado").classList.remove("selecionado")
+}
 export { onAddButtonEvent , onDeleteButtonEvent}

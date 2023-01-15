@@ -7,7 +7,7 @@ const sequenciaId = {
 
 function callToast(text, colorFrom = "#00b09b", colorTo="#96c93d"){
     Toastify({
-        text: text,
+        text,
         duration: 3000,
         newWindow: true,
         close: true,

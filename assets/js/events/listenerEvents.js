@@ -9,7 +9,6 @@ const howToMake = document.getElementById("howTo");
 
 const buttonAdd = document.querySelector(".adicionar")
 const trashButton = document.querySelector(".trash")
-
 function startEvents(){
     document.body.onload = recipesMethod.loadRecipe()
 

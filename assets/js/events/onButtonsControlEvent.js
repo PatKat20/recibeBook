@@ -21,7 +21,6 @@ function onDeleteButtonEvent(){
     recipeArea.style.zIndex="-1"
     recipesMethod.deleteTask(id)
     recipesMethod.saveRecipe()
-    removeClassSelected()
     callToast(`${productInfo.name} deletado com sucesso`,"#DE3163", "#E0115F")
 }
 

@@ -21,4 +21,6 @@ function callToast(text, colorFrom = "#00b09b", colorTo="#96c93d"){
       }).showToast();
 }
 
+
+
 export { sequenciaId, callToast }

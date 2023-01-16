@@ -1,9 +1,9 @@
-import { sequenciaId } from "../../utils/utils.js";
-import { insertIntoRecipes } from "../content/render.js";
-import { callToast } from "../../utils/utils.js";
+import { sequenciaId , callToast } from "../../utils/utils.js";
+import { insertIntoRecipes } from "../content/insertFunctions.js";
+import { verifyAlreadyDish } from "./verifyFunctions.js";
 
 const recipesMethod = {}
-let recipesDB = {}
+const recipesDB = {}
 
 recipesMethod.saveRecipe = () =>{
     localStorage.setItem("recipes", JSON.stringify(recipesDB))
@@ -23,13 +23,23 @@ recipesMethod.getAllRecipes = () =>{
     return {...recipesDB}
 }
 
-recipesMethod.createRecipeItem = (recipeName, ingredient, prepareDesc) =>{
+recipesMethod.insertRecipeItem = (recipeName, ingredient, prepareDesc) =>{
     if(!recipeName || !ingredient || !prepareDesc) return
+    if(verifyAlreadyDish(recipeName, recipesDB)) return callToast(`${recipeName} Já foi adicionado!`, "#FFDD00", "#FBB034")
+
     const id = sequenciaId.id
     recipesDB[id] = {id, name: recipeName, ingredient, prepareDesc}
     insertIntoRecipes(recipesDB)
     recipesMethod.saveRecipe()
-    callToast(`${recipeName} adicionada`, "#0BAB64", "#3BB78F")
+    callToast(`${recipeName} adicionado`, "#0BAB64", "#3BB78F")
+}
+
+recipesMethod.updateRecipeItem = (id, recipeName, ingredient, prepareDesc) =>{
+    if(!recipeName || !ingredient || !prepareDesc) return
+    recipesDB[id] = {id, name: recipeName, ingredient, prepareDesc}
+    insertIntoRecipes(recipesDB)
+    recipesMethod.saveRecipe()
+    callToast(`${recipeName} alterada com sucesso!`, "#0BAB64", "#3BB78F")
 }
 
 recipesMethod.getRecipeById = (id) =>{

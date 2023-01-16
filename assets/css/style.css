@@ -55,16 +55,34 @@ img {
 
 #recipe {
     height: 340px;
+    margin-right:10px;
     overflow-y: scroll;
     -ms-overflow-style: none;
     /* IE and Edge */
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    /* scrollbar-color: ; */
     /* Firefox */
 }
 
+/* width */
 #recipe::-webkit-scrollbar {
-    display: none;
-}
+    width: 7px;
+  }
+  
+  /* Track */
+  #recipe::-webkit-scrollbar-track {
+    background:#222831; 
+  }
+   
+  /* Handle */
+  #recipe::-webkit-scrollbar-thumb {
+    background: #787C81; 
+  }
+  
+  /* Handle on hover */
+  #recipe::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
 #recipeTitle {
     font-size: 28px;
@@ -75,18 +93,14 @@ img {
 
 .recipeItem {
     display: flex;
-    justify-content: flex-start;
-    padding: 20px;
+    justify-content: space-between;
+    
     background-color: rgba(255, 255, 255, .12);
     width: 90%;
     margin: 5px auto;
     border-radius: 5px;
     cursor: pointer;
     transition: background .5s;
-}
-
-.recipeItem:hover {
-    background-color: rgba(255, 255, 255, .15);
 }
 
 .recipeItem.selecionado{
@@ -102,8 +116,53 @@ img {
     color: var(--secundaryColor);
 }
 
+#recipeInput{
+    padding:10px;
+    width:100px;
+    margin-top:10px;
+    background-color:#787C81;
+    color:white;
+    border:0;
+    border-radius:5px;
+    transition: width .5s ease-in-out;
+    outline:0;
+    position:relative;
+    right:10px;
+    overflow:hidden;
+    font-size:15px;
+    text-overflow: ellipsis;
+}
 
+#recipeInput:focus{
+    width:284px;
+}
 
+.editBtn{
+    font-size:22px;
+}
+
+.recipeDesc{
+    display:flex;
+    height:100%;
+    padding: 20px;
+    width:85%;
+}
+
+.recipeDesc:hover{
+    background-color: rgba(255, 255, 255, .15);
+}
+
+.editArea{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:19px 0;
+    width:15%;
+}
+
+.editArea:hover{
+    background-color: rgba(255, 255, 255, .15);
+}
 
 /* Main Area */
 
@@ -146,7 +205,7 @@ img {
     height:100%;
 }
 
-#addRecipe {
+.btnRecipe {
     background-color: #4E9E83;
     color: white;
     width: 99%;
@@ -161,12 +220,16 @@ img {
     cursor: pointer;
 }
 
-#addRecipe:hover{
+.btnRecipe:hover{
     background-color:#4e9e83f3;
 }
 
-#addRecipe ion-icon {
+.btnRecipe ion-icon {
     margin-right: .2rem;
+}
+
+#editRecipe{
+    display:none;
 }
 
 .inputArea {
@@ -244,6 +307,8 @@ img {
     background:transparent;
     border:0;
 }
+
+
 
 @media screen and (max-width:770px){
     #header{

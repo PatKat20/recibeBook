@@ -13,6 +13,7 @@
     <header id="header">
         <h1 class="headerTitle">Tastecamp</h1>
         <ul id="recipe"></ul>
+        <input type="text" name="" id="recipeInput" placeholder="Pesquisar receita">
     </header>
     <main id="main">
         <section class="recipeArea hidden">
@@ -48,9 +49,13 @@
                 <textarea name="" id="howTo" cols="90" rows="10" style="resize:none;" class="inputBlockTextArea" required></textarea>
             </div>
             
-            <button id="addRecipe">
+            <button id="addRecipe" class="btnRecipe">
                 <ion-icon name="save"></ion-icon>
-                Adicionar receita
+                <p>Adicionar receita</p>
+            </button>
+            <button id="editRecipe" class="btnRecipe editRecipe">
+                <ion-icon name="save"></ion-icon>
+                <p>Editar receita</p>
             </button>
         </section>
 
